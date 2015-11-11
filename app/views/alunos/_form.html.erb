@@ -1,0 +1,61 @@
+<%= form_for(@aluno, :html => { :multipart => true}) do |f| %>
+  <% if @aluno.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@aluno.errors.count, "error") %> prohibited this aluno from being saved:</h2>
+
+      <ul>
+      <% @aluno.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ <div class="row">
+    <div class="col-lg-5">
+    <%= f.label :nome %><br>
+    <%= f.text_field :nome, class: "form-control"  %>
+  </div>
+ </div> 
+
+  <div class="row">
+    <div class="col-lg-3">
+    <%= f.label :ra %><br>
+    <%= f.text_field :ra, class: "form-control"  %>
+  </div>
+ </div> 
+
+  <div class="row">
+    <div class="col-lg-3">
+    <%= f.label :rg %><br>
+    <%= f.text_field :rg, class: "form-control" %>
+  </div>
+  </div>
+
+   <div class="row">
+    <div class="col-lg-4">
+    <%= f.label :cpf %><br>
+    <%= f.text_field :cpf, class: "form-control"  %>
+  </div>
+  </div>
+
+   <div class="row">
+    <div class="col-lg-5">
+    <%= f.label :email %><br>
+    <%= f.text_field :email, class: "form-control"  %>
+  </div>
+  </div>
+<br>
+   <div class="row">
+    <div class="col-lg-5">
+    <%= f.label :imagem %><br>
+    <%= f.file_field :image %>
+  </div>
+  </div>
+  <br>
+
+  <div class="actions">
+    <%= f.submit "Cadastrar", class: "btn btn-primary"%>
+    <%= link_to 'Voltar', alunos_path, class: "btn btn-default" %>
+  </div>
+<% end %>

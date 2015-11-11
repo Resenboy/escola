@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p class="lead">
+  <strong>Curso:</strong>
+  <%= @notum.curso.nome %>
+</p>
+
+<p class="lead" >
+  <strong>Aluno:</strong>
+  <%= @notum.aluno.nome %>
+</p>
+
+<p class="lead">
+  <strong>Professor:</strong>
+  <%= @notum.professor.nome %>
+</p>
+
+<p class="lead">
+  <strong>Data:</strong>
+  <%= @notum.data %>
+</p>
+
+<p class="lead">
+  <strong>Nota1:</strong>
+  <%= @notum.nota1 %>
+</p>
+
+<p class="lead">
+  <strong>Nota2:</strong>
+  <%= @notum.nota2 %>
+</p>
+
+<p class="lead">
+  <strong>Nota3:</strong>
+  <%= @notum.nota3 %>
+</p>
+
+<%= link_to 'Alterar', edit_notum_path(@notum), class: "btn btn-primary btn-lg" %>
+<%= link_to 'Voltar', nota_path, class: "btn btn-default btn-lg" %>

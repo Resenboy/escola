@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+<p class="lead">
+  <strong>Nome:</strong>
+  <%= @professor.nome %>
+</p>
+
+<p class="lead">
+  <strong>Registro:</strong>
+  <%= @professor.registro %>
+</p>
+
+<p class="lead">
+  <strong>Disciplina:</strong>
+  <%= @professor.disciplina %>
+</p>
+
+<%= link_to 'Editar', edit_professor_path(@professor), class: "btn btn-primary btn-lg" %> 
+<%= link_to 'Voltar', professors_path, class: "btn btn-default btn-lg" %>
+</div>

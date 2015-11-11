@@ -1,0 +1,44 @@
+<%= form_for(@professor) do |f| %>
+  <% if @professor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@professor.errors.count, "error") %> prohibited this professors from being saved:</h2>
+
+      <ul>
+      <% @professor.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div>
+  <div class="row">
+    <div class="col-lg-5">
+    <%= f.label :nome %><br>
+    <%= f.text_field :nome, class: "form-control" %>
+  </div>
+  </div>
+
+<div class="row">
+  <div class="col-lg-3">
+    <%= f.label :registro %><br>
+    <%= f.text_field :registro, class: "form-control" %>
+  </div>
+  </div>
+
+<div class="row">
+  <div class="col-lg-4">
+    <%= f.label :disciplina %><br>
+    <%= f.text_field :disciplina, class: "form-control" %>
+  </div>
+  </div>
+
+<br>
+  <div class="row">
+
+  <div class="actions col-lg-5">
+    <%= f.submit "Salvar", class: "btn btn-primary"%>
+    <%= link_to 'Voltar', professors_path, class: "btn btn-default" %>
+  </div>
+  </div>
+ </div> 
+<% end %>

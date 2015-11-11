@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Escola</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" href="http://railsgirls.com/assets/bootstrap.css">
+
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+		<nav class="navbar navbar-inverse navbar-fixed-top animate">
+			
+				<div class="nav navbar-brand">
+				<% if  usuario_signed_in? %>
+	Logado com: <em><%= current_usuario.email %></em>. Não é você?
+		<%= link_to "Sair", destroy_usuario_session_path, :method => :delete %>
+	<% else %>
+	 	<%= link_to "Registrar", new_usuario_registration_path %> ou <%= link_to "Entrar", new_usuario_session_path%>
+	<% end %>
+				</div>
+			
+
+			<ul class="nav navbar-nav navbar-right">
+					<li><%= link_to 'Professores', professors_path%></li>
+					<li><%= link_to 'Alunos', alunos_path%></li>
+					<li><%= link_to 'Cursos', cursos_path%></li>
+					<li><%= link_to 'Notas', nota_path%></li>
+					<li><%= link_to 'Inicio', usuario_session_path%></li>
+			</ul>
+		
+	</nav>
+
+<div class= "corpo">
+	<%= yield %>
+</div>
+
+<footer>
+	<div class="text-center">
+
+		<h4>Gestão Escolar 2015</h4>
+	</div>
+</footer>
+
+
+</body>
+</html>

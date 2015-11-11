@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+<p class="lead">
+  <strong>Nome:</strong>
+  <%= @aluno.nome %>
+</p>
+
+<p class= "lead">
+  <strong>Ra:</strong>
+  <%= @aluno.ra %>
+</p>
+
+<p class= "lead">
+  <strong>Rg:</strong>
+  <%= @aluno.rg %>
+</p>
+
+<p class= "lead">
+  <strong>Cpf:</strong>
+  <%= @aluno.cpf %>
+</p>
+
+<p class="lead">
+  <strong>Email:</strong>
+  <%= @aluno.email %>
+</p>
+
+<div>
+<p class="lead">
+  <%= image_tag(@aluno.image, class: "img-circle img-circle-show") %>
+</p>
+</div>
+
+<%= link_to 'Editar', edit_aluno_path(@aluno), class: "btn btn-primary btn-lg col-sm-2" %>
+<%= link_to 'Voltar', alunos_path, class: "btn btn-default btn-lg col-sm-2" %>
+
+
+</div>

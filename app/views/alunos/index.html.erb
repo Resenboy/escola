@@ -1,0 +1,53 @@
+<h2>Alunos</h2>
+
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <div class="container col-xs-8">
+    <%= link_to 'Novo Aluno', new_aluno_path,class: 'btn btn-success btn-lg col-lg-3' %>
+  </div>
+
+<div class="col-xs-4 text-right">
+    <%= form_tag(alunos_path, method: "get") do %>
+      <div class="input-group">
+        <%= text_field_tag(:p, '', class: 'form-control') %>
+        <span class="input-group-btn">
+          <%= button_tag class: 'btn btn-success' do %>
+            <i class="fa fa-search" aria-hidden="true"></i>
+          <% end %>
+        </span>
+      </div>
+    <% end %>
+  </div>
+ </div>
+ <br>
+
+<table class= "table table-striped">
+  <thead>
+    <tr>
+      <th>Imagem</th>
+      <th>Nome</th>
+      <th>Ra</th>
+      <th>Rg</th>
+      <th>Cpf</th>
+      <th>Email</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @alunos.each do |aluno| %>
+      <tr>
+        <td><%= image_tag(aluno.image.url(:thumb), class: "img-circle" ) %></td>
+        <td><%= aluno.nome %></td>
+        <td><%= aluno.ra %></td>
+        <td><%= aluno.rg %></td>
+        <td><%= aluno.cpf %></td>
+        <td><%= aluno.email %></td>
+        <td><%= link_to 'Mostrar', aluno, class: "btn btn-default" %>
+        <%= link_to 'Editar', edit_aluno_path(aluno), class: "btn btn-primary" %>
+        <%= link_to 'Excluir', aluno, class: "btn btn-danger", method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

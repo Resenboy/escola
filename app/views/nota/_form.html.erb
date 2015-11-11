@@ -1,0 +1,53 @@
+<%= form_for(@notum) do |f| %>
+  <% if @notum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@notum.errors.count, "error") %> prohibited this notum from being saved:</h2>
+
+      <ul>
+      <% @notum.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+<div class="col-sm-3">
+    <%= f.label :curso%><br>
+    <%= f.collection_select :curso, Curso.all, :id, :nome, {prompt: "Selecione um curso"}, {class: "form-control"} %>
+  </div>
+  <div class="col-sm-4">
+    <%= f.label :aluno %><br>
+    <%= f.collection_select :aluno, Aluno.all, :id, :nome, {prompt: "Selecione um aluno"}, {class: "form-control"} %>
+  </div>
+  <div class="col-sm-3">
+    <%= f.label :professor_id %><br>
+    <%= f.collection_select :professor, Professor.all, :id, :nome, {prompt: "Selecione um professor"}, {class: "form-control"} %>
+  </div>
+</div><br><br><br>
+
+<div class="row">
+  <div class="col-lg-3">
+    <%= f.label :data , "Data de Lançamento da Nota" %><br>
+    <%= f.date_field :data, class: "form-control" %>
+  </div>
+  <div class="col-sm-1">
+    <%= f.label :nota1, "Avaliação 1" %><br>
+    <%= f.number_field :nota1, class: "form-control" %>
+  </div>
+  <div class="col-sm-1">
+    <%= f.label :nota2, "Avaliação 2" %><br>
+    <%= f.number_field :nota2, class: "form-control" %>
+  </div>
+  <div class="col-sm-1">
+    <%= f.label :nota3, "Trabalho em Grupo", class: "tgrupo" %><br>
+    <%= f.number_field :nota3, class: "form-control" %>
+  </div>
+ </div> 
+  <br><br>
+  <div class="actions">
+    <%= f.submit "Registrar Nota", class: "btn-lg btn btn-success" %>
+    <%= link_to 'Voltar', nota_path, class: "btn-lg btn btn-default" %>
+  </div>
+
+<% end %>

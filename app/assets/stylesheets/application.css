@@ -1,0 +1,41 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ *{margin: 0; padding: 0;}
+body { padding-top: 50px;background-image: url("custom1.jpg"); opacity: 0.9; }
+footer {background: black; padding: 10px; position: fixed; width: 100%; bottom: 0px;}
+table, td, th { vertical-align: middle !important; border: none !important; }
+th {border-bottom: 1px solid #DDD !important;}
+
+tr th{ text-align: center;}
+tr td{ text-align: center;}
+
+h2{text-align: center;}
+
+.corpo{margin: 0px auto; padding: 15px;}
+.btn:visited {color: white;}
+.btn-default:visited{color: black;}
+.teste{max-width: 400px;}
+.nav{font-size: 20px; padding-top: 1px; padding-right: 15px; }
+
+.img-circle-show{margin-left: 500px; margin-top: -300px;}
+
+.direita{margin-left: 400px;}
+
+.tgrupo{margin-top: -50px;}
+.btn_rnota{}
+
+
+

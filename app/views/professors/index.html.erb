@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h2>Professores</h2>
+<%= link_to 'Novo Professor', new_professor_path,class: 'btn btn-success btn-lg col-sm-2' %>
+<br>
+
+<table class= 'table table-striped'>  
+  <br><br>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Registro</th>
+      <th>Disciplina</th>
+      <th class="text-center">Ações</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @professors.each do |professor| %>
+      <tr>
+        <td class="text-left"><%= professor.nome %></td>
+        <td><%= professor.registro %></td>
+        <td><%= professor.disciplina %></td>
+        <td class="text-center">
+        <%= link_to 'Mostrar', professor, class: 'btn btn-default' %>
+        <%= link_to 'Editar', edit_professor_path(professor), class: 'btn btn-primary' %>
+        <%= link_to 'Excluir', professor, class: 'btn btn-danger', method: :delete, data: { confirm: 'Confirma exclusão ?' } %>
+      </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

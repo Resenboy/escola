@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p class="lead">
+  <strong>Nome:</strong>
+  <%= @curso.nome %>
+</p>
+
+<p class="lead">
+  <strong>Area:</strong>
+  <%= @curso.area %>
+</p>
+<div>
+	<%= link_to 'Editar', edit_curso_path(@curso), class: "btn btn-primary btn-lg" %> 
+	<%= link_to 'Voltar', cursos_path, class: "btn btn-default btn-lg" %>
+</div>
